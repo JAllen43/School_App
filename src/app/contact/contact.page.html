@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--Ion-card is set up for the call option in the alternating colour-->
+<ion-card color="secondary">
+<ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <!--Sets the heading colour to a burgundy colour-->
+        <h1 color="primary">Mrs Smith Phone</h1>
+      </ion-col>
+      <!--Sets up the present call function with a relative icon-->
+      <ion-col>
+        <ion-button (click)=presentCallOption() size="large" ><ion-icon name="call"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card>
+<!--Ion-card is set up for the email option in the alternating colour, linked to the javascript backend-->
+<ion-card color="secondary">
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <!--Sets the heading colour to a burgundy colour-->
+          <h1 colour="primary">Mrs Smith Email</h1>
+        </ion-col>
+        <ion-col>
+          <!--Sets up the present email function with a relative icon, linked to the javascript backend-->
+          <ion-button size="large" (click)=presentEmailOption() ><ion-icon name="mail" size="large"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+  </ion-card>
+  
+    
+</ion-content>

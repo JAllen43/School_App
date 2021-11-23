@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parmiter's School</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <img src="https://www.parmiters.herts.sch.uk/_site/images/design/logo@2x.png" alt="Parmiter's logo" class="center"/>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+  <div class="main">
+    <!--Sets up an ion-grid with relevant buttons to get to the relevant pages-->
+  <ion-grid>
+  <ion-row>
+    <!--Sets up a cell for the calendar page button to be located within it-->
+    <ion-col class="ion-text-center">
+      <div ><ion-button class="button_height" color="secondary" (click)="noticesPage()"size ="large" expand="block"><ion-icon color="primary"class="icon" name="alert-circle-outline"></ion-icon></ion-button></div>
+    </ion-col>
+    <!--Sets up a cell for the documents page button to be located within it-->
+    <ion-col>
+      <div class="ion-text-center"><ion-button class="button_height" color="secondary" (click)="documentsPage()" size ="large" expand="block"><ion-icon color="primary" name="document"></ion-icon></ion-button></div>
+    </ion-col>
+    <!--Sets up a cell for the food order page button to be located within it-->
+    <ion-col>
+      <div class="ion-text-center"><ion-button class="button_height" color="secondary" (click)="foodPage()" size="large" expand="block"><ion-icon color="primary" name="fast-food"></ion-icon></ion-button></div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <!--Sets up a cell for the sign in page button to be located within it-->
+    <ion-col>
+      <div class="ion-text-center"><ion-button class="button_height" color="secondary" (click)="logInPage()" size ="large" expand="block"><ion-icon color="primary" name="log-in"></ion-icon></ion-button></div>
+    </ion-col>
+    <!--Sets up a cell for the sign out page button to be located within it-->
+    <ion-col>
+      <div class="ion-text-center"><ion-button class="button_height" color="secondary" (click)="logOutPage()" size ="large" expand="block"><ion-icon color="primary" name="log-out"></ion-icon></ion-button></div>
+    </ion-col>
+    <!--Sets up a cell for the contact page button to be located within it-->
+    <ion-col>
+      <div class="ion-text-center"><ion-button class="button_height" color="secondary" (click)="contactPage()" size ="large" expand="block"><ion-icon color="primary" class="iconcolour" name="call"></ion-icon></ion-button></div>
+    </ion-col>
+  </ion-row>
+</ion-grid> 
+</div>
+</ion-content>

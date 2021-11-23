@@ -1,0 +1,37 @@
+//Setting relevant colours for the relevant areas of the page 
+.marginauto {
+    margin: 10px auto 20px;
+    display: block;
+}
+
+.logo{
+    background-color: #8A2944;
+
+}
+ion-toolbar{
+    --background:#8A2944;
+}
+
+.main{
+    background-color: #8A2944;
+}
+ion-content{
+    --ion-background-color:#8A2944;
+}
+.buttoncolor{
+    --background: #FFFFFF;
+}
+ion-icon{
+    --backround:#8A2944;
+
+}
+.icon{
+    --background:#8A2944;
+    
+}
+.button_height{
+    height:100px;
+}
+ion-icon {
+    font-size: 50px;
+  }

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Check In Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+<ion-card *ngIf="pinDrop == true" class="card">
+  <ion-card-header>
+    <ion-card-title>
+      <h1>Check In Form</h1>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>
+            Name
+          </h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input placeholder="Enter name here" type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h1>
+            Form
+          </h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input placeholder="Enter form here" type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h1>
+            Reason
+          </h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input placeholder="Enter reason here" type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="buttoncolor" expand="block" (click)="signInFunction()">Submit Sign In</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!--Only if the user is within a certain area is the sign in form displayed-->
+<ion-card *ngIf="pinDrop == true" color="secondary">
+  <!--Centres the content that is contained within the paragraph tags-->
+  <p align="center">
+    <!--Embeds the google sign in form to the page, setting a suitable width/height/border-->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSckHBwfgiPeuHKPde9w6remT_cstRHtuMpKBT5t-xEl-_rtPA/viewform?embedded=true" style="width:90%; height:100vh; border:0;">Loading…</iframe>
+  </p>
+</ion-card>
+<!--If the user is not within the area then a message telling them what they need to do is presented-->
+<ion-card *ngIf="pinDrop== false" color="secondary">
+  <h1>You need to turn location services on <b>and</b> be at school to access this part of the app's functionality</h1>
+</ion-card>
+</ion-content>
