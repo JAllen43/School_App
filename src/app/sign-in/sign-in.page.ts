@@ -31,9 +31,9 @@ export class SignInPage implements OnInit {
      }
 
   ngOnInit() { 
-  console.log("Step 1")
+  //Checks whether the application has permission to use the GPS function on the phone
   this.checkGPSPermission()
-  console.log("Step 2")
+  //Acquires the longitude and latitude values to figure out whether to display the Sign-In form
     this.geolocation.getCurrentPosition().then((resp) => {
       this.latitude=resp.coords.latitude
       this.longitude=resp.coords.longitude
@@ -44,56 +44,14 @@ export class SignInPage implements OnInit {
       this.pinDrop=false
     }
      }).catch((error) => {
+       //Posts an arror if there was an error getting the location
        console.log('Error getting location', error);
      });    
   }
 
-  signInFunction(){
-    let date = new Date()
-    console.log("Current Date ", date) 
-      this.geolocation.getCurrentPosition().then((resp) => {
-      this.latitude=resp.coords.latitude
-      this.longitude=resp.coords.longitude
-      console.log("lat: ", this.latitude)
-      console.log("long", this.longitude)
-     }).catch((error) => {
-       console.log('Error getting location11111', error);
-     });
-  
-  if (this.latitude < -0.28499 && this.latitude > -0.39083){
-    console.log("This works")
-
-  }
-  else{
-    console.log("You are not in the area")
-  }
-    
-}
-
-async alert(){
-  const alert = await this.alertController.create({
-    header: 'Out of range',
-    subHeader: 'Subtitle',
-    message: 'You are currently not within the required range to sign in, try going to school or a different position on site to sign in.',
-    buttons: ['OK', 'Cancel']
-  });
-
-  await alert.present();
-
-  const { role } = await alert.onDidDismiss();
-  console.log('onDidDismiss resolved with role', role);
-}
 
 
-update(){
-  var params = {
-    spreadSheetID: '14-19UX1L3vVxXHfVDaoylc2ii2ShWHbRYK84BQM6WXM'
-    
-  }
-}
-
-
-
+  //Checks to see if application has persmission to turn GPS on. Code developed in conjunction with ideas by freakyjolly.com (2021)
   checkGPSPermission() {
     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_COARSE_LOCATION).then(
       result => {
@@ -112,6 +70,8 @@ update(){
       }
     );
 }
+
+//Requests permission to turn GPS on. Code developed in conjunction with ideas by freakyjolly.com (2021)
 requestGPSPermission() {
   this.locationAccuracy.canRequest().then((canRequest: boolean) => {
     if (canRequest) {
@@ -130,6 +90,8 @@ requestGPSPermission() {
     }
   });
 }
+
+//Asks to turn the GPS feature on. Code developed in conjunction with ideas by freakyjolly.com (2021)
 askToTurnOnGPS() {
   this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
     () => {
@@ -139,6 +101,8 @@ askToTurnOnGPS() {
     error => alert('Error requesting location permissions ' + JSON.stringify(error))
   );
 }
+
+// Gets the current location of the user of the application. Code developed in conjunction with ideas by freakyjolly.com (2021)
 getLocationCoordinates() {
   this.geolocation.getCurrentPosition().then((resp) => {
     this.locationCoords.latitude = resp.coords.latitude;
@@ -151,3 +115,5 @@ getLocationCoordinates() {
 }
 
 }
+
+
