@@ -37,7 +37,7 @@ export class SignInPage implements OnInit {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.latitude=resp.coords.latitude
       this.longitude=resp.coords.longitude
-      if (this.latitude < -0.28499 && this.latitude > -0.39083){
+      if (this.latitude > -0.398002 && this.latitude < -0.383753 && this.longitude > 51.700183 && this.longitude < 51.707208){
       this.pinDrop=true
     }
     else{
