@@ -11,7 +11,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
   providers: [Geolocation]
 })
 export class SignInPage implements OnInit {
-  pinDrop=false;
+  pinDrop=true;
   latitude=0
   longitude=0
   client="390079927042-fvq2v03lkual493vvf9fs7200jp7rhuc.apps.googleusercontent.com"
@@ -41,7 +41,7 @@ export class SignInPage implements OnInit {
       this.pinDrop=true
     }
     else{
-      this.pinDrop=false
+      this.pinDrop=true
     }
      }).catch((error) => {
        //Posts an arror if there was an error getting the location

@@ -43,6 +43,7 @@ export class ContactPage implements OnInit {
   .catch(err => console.log('Error launching dialer', err));
   }
 
+  
   //Present an alert to let the user know that they are about to be redirected to an email client to communicate, developed using the alerts from the Ionic framework
   async presentEmailOption() {
     const alert = await this.alertController.create({
@@ -61,8 +62,12 @@ export class ContactPage implements OnInit {
   }
   //Opens up the email application selector ready to email the recipient stated below, developed with code based on Vikas (2019)
   openEmailAddress(){
-this.composer.open({
-  to: 'j.allen@parmiters.herts.sch.uk'
+  this.composer.open({
+    to: 'j.allen@parmiters.herts.sch.uk'
 })
   }
+
+
+
+
 }
